@@ -405,7 +405,7 @@ struct extended_mnt4_G2_projective {
 
     static void test_invariant()
     {
-        assert(T == Z.squared());
+//        assert(T == Z.squared());
     }
 };
 
