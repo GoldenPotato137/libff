@@ -15,6 +15,7 @@
 #define BIGINT_HPP_
 #include <cstddef>
 #include <iostream>
+#include <string>
 
 #include <gmp.h>
 
@@ -47,6 +48,7 @@ public:
 
     void print() const;
     void print_hex() const;
+    std::string sprint() const;
     bool operator==(const bigint<n>& other) const;
     bool operator!=(const bigint<n>& other) const;
     bool operator<(const bigint<n>& other) const;

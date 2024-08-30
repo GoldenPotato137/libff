@@ -12,6 +12,7 @@
 #include <cassert>
 #include <cstring>
 #include <random>
+#include <string>
 
 namespace libff {
 
@@ -81,6 +82,16 @@ template<mp_size_t n>
 void bigint<n>::print_hex() const
 {
     gmp_printf("%Nx\n", this->data, n);
+}
+
+template<mp_size_t n>
+std::string bigint<n>::sprint() const
+{
+    std::string s;
+    s.resize(n * GMP_NUMB_BITS);
+    auto num = gmp_sprintf(&s[0], "%Nd", this->data, n);
+    s.resize(num);
+    return s;
 }
 
 template<mp_size_t n>

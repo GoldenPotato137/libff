@@ -286,6 +286,15 @@ void Fp_model<n,modulus>::print() const
 }
 
 template<mp_size_t n, const bigint<n>& modulus>
+std::string Fp_model<n,modulus>::sprint() const
+{
+    Fp_model<n,modulus> tmp;
+    tmp.mont_repr.data[0] = 1;
+    tmp.mul_reduce(this->mont_repr);
+    return tmp.mont_repr.sprint();
+}
+
+template<mp_size_t n, const bigint<n>& modulus>
 Fp_model<n,modulus> Fp_model<n,modulus>::zero()
 {
     Fp_model<n,modulus> res;

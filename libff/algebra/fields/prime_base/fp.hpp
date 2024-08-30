@@ -10,6 +10,8 @@
 #ifndef FP_HPP_
 #define FP_HPP_
 
+#include <string>
+
 #include <libff/algebra/field_utils/algorithms.hpp>
 #include <libff/algebra/field_utils/bigint.hpp>
 
@@ -74,6 +76,7 @@ public:
 
     void clear();
     void print() const;
+    std::string sprint() const;
     void randomize();
 
     /**
